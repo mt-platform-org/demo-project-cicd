@@ -45,15 +45,15 @@ jobs:
 #          file: ./dockerfile/Dockerfile
 #          push: true
 #          tags: ghcr.io/mt-platform-org/demo-project-cicd/demo-project-cicd_v2711
-               
+
         - name: Push to GitHub Packages
-            uses: docker/build-push-action@v1
-            with:
-              context: .
-              file: ./dockerfile/Dockerfile
-              username: ${{ github.actor }}
-              password: ${{ secrets.GITHUB_TOKEN }}
-              registry: docker.pkg.github.com
-              repository: mt-platform-org/demo-project-cicd/demo-project-cicd_v2711:latest_v1.0
-              tag_with_ref: true
+          uses: docker/build-push-action@v1
+          with:
+            context: .
+            file: ./dockerfile/Dockerfile
+            username: ${{ github.actor }}
+            password: ${{ secrets.GITHUB_TOKEN }}
+            registry: docker.pkg.github.com
+            repository: mt-platform-org/demo-project-cicd/demo-project-cicd_v2711:latest_v1.0
+            tag_with_ref: true
               
