@@ -34,7 +34,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
-          repository: mt-platform-org/demo-project-cicd/demo-project-cicd_v2711:latest_v1.0
+          repository: mt-platform-org/demo-project-cicd/demo-project-cicd_v2711
           tag_with_ref: true
               
 #      - name: Set up QEMU
