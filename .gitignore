@@ -1,0 +1,11 @@
+/build
+/PreviousBuilds
+/.git
+/.gradle
+/.project
+/.settings
+/RemoteSystemsTempFiles
+/**/.classpath
+/**/.project
+/**/.settings
+/**/bin
