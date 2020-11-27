@@ -44,7 +44,6 @@ jobs:
         with:
           context: .
           file: ./dockerfile/Dockerfile
-          github-token: ${{ secrets.GITHUB_TOKEN }}
           push: true
           tags: ghcr.io/mt-platform-org/demo-project-cicd/demo-project-cicd_v2711
                
