@@ -31,8 +31,8 @@ jobs:
         with:
           context: .
           file: ./dockerfile/Dockerfile
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: ${{ secrets.REPO_USERNAME }}
+          password: ${{ secrets.REPO_TOKEN }}
           registry: docker.pkg.github.com
           repository: mt-platform-org/demo-project-cicd/demo-project-cicd_v2711
           tag_with_ref: true
