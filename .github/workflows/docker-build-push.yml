@@ -37,10 +37,10 @@ jobs:
       - name: Push to GitHub Packages
         uses: docker/build-push-action@v1
         with:
-          context: .
-          file: ./dockerfile/Dockerfile
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          dockerfile: ./dockerfile/Dockerfile
+          username: ${{ secrets.REPO_USERNAME }}
+          password: ${{ secrets.REPO_TOKEN }}
           registry: docker.pkg.github.com
-          repository: mt-platform-org/demo-project-cicd/demo-project-cicd
+          repository: mt-platform-org/demo-project-cicd
           tag_with_ref: true
+          
