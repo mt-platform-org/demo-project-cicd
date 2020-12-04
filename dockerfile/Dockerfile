@@ -1,15 +1,17 @@
-ARG OS_IMAGE=centos
-FROM $OS_IMAGE
+#ARG OS_IMAGE=centos
+#FROM $OS_IMAGE
+FROM openjdk:8-jdk-alpine
 ARG SAG_HOME
-ARG AA_VERSION=1.0
+#ARG AA_VERSION=1.0
 ENV SAG_HOME=${SAG_HOME:-/opt/softwareag}
 
-RUN echo "The OS image is $OS_IMAGE"
+#RUN echo "The OS image is $OS_IMAGE"
 
-RUN echo "The AA version is $AA_VERSION"
+#RUN echo "The AA version is $AA_VERSION"
 
-RUN yum -y update \
-    && yum install  -y java-1.8.0-openjdk 
+#RUN yum -y update && yum install  -y java-1.8.0-openjdk 
+
+RUN export BOOT_JAR_FILE_NAME=$(ls ./build/libs/*.jar)
 
 RUN  set -x \
       && groupadd -r ug215385 \
@@ -20,8 +22,8 @@ EXPOSE 80
 USER ug215385
 
 WORKDIR $SAG_HOME
-ADD --chown=ug215385:ug215385  ./build/libs/*.jar $SAG_HOME/agileapps-boot_$AA_VERSION.jar
+ADD --chown=ug215385:ug215385  ./build/libs/$BOOT_JAR_FILE_NAME $SAG_HOME/$BOOT_JAR_FILE_NAME
 COPY --chown=ug215385:ug215385  /uitemplates $SAG_HOME/uitemplates
 
-ENTRYPOINT ["java", "-jar","agileapps-boot_$AA_VERSION.jar"]
+ENTRYPOINT ["java", "-jar","$BOOT_JAR_FILE_NAME"]
 
