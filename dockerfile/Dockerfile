@@ -22,6 +22,8 @@ EXPOSE 80
 #USER ug215385
 
 WORKDIR $SAG_HOME
+RUN pwd
+
 #ADD --chown=ug215385:ug215385  ./build/libs/$BOOT_JAR_FILE_NAME $SAG_HOME/$BOOT_JAR_FILE_NAME
 ADD /build/libs/springboot-ci-demo*.jar $SAG_HOME/spring-boot-demo.jar
 #COPY --chown=ug215385:ug215385 /uitemplates $SAG_HOME/uitemplates
