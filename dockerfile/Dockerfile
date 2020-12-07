@@ -11,7 +11,7 @@ ENV SAG_HOME=${SAG_HOME:-/opt/softwareag}
 
 #RUN yum -y update && yum install  -y java-1.8.0-openjdk 
 
-#RUN export BOOT_JAR_FILE_NAME=$(ls ./build/libs/*.jar)
+RUN export BOOT_JAR_FILE_NAME=$(ls ./build/libs/*.jar)
 
 #RUN  set -x \
 #      && groupadd -r ug215385 \
@@ -20,7 +20,8 @@ ENV SAG_HOME=${SAG_HOME:-/opt/softwareag}
 EXPOSE 80
 
 #USER ug215385
-
+RUN pwd
+RUN echo $BOOT_JAR_FILE_NAME
 WORKDIR $SAG_HOME
 RUN pwd
 
