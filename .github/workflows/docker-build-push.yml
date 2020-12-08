@@ -50,8 +50,8 @@ jobs:
       
       - name: Running the docker image
         run: |
-          echo ${{ secrets.REPO_TOKEN }} | docker login ghcr.io -u ${{ secrets.REPO_USERNAME }} --password-stdin
-          docker pull  ghcr.io/mt-platform-org/demo-project-cicd/demo-project-cicd_v2.0:latest
+          echo ${{ secrets.REPO_TOKEN }} | docker login https://docker.pkg.github.com -u ${{ secrets.REPO_USERNAME }} --password-stdin
+          docker pull  docker.pkg.github.com/mt-platform-org/demo-project-cicd/demo-project-cicd_v2.0:latest
           docker run --detach demo-project-cicd_v2.0:latest
           docker ps
           docker exec -it $(docker ps --format "{{.ID}}") bash
