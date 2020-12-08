@@ -34,19 +34,19 @@ jobs:
           #repository: sanjayk2020/springboot-ci-demo
           #tag_with_ref: true
           
-      - name: Push to GitHub Packages
-        uses: docker/build-push-action@v1
-        #uses: docker/build-push-action@v2 
-        with:
-          #context: .
-          dockerfile: ./dockerfile/Dockerfile
-          #file: ./dockerfile/Dockerfile
-          username: ${{ secrets.REPO_USERNAME }}
-          password: ${{ secrets.REPO_TOKEN }}
-          registry: docker.pkg.github.com
-          repository: mt-platform-org/demo-project-cicd/demo-project-cicd_v2.0
-          #tags: mt-platform-org/demo-project-cicd/demo-project-cicd_v2.0
-          tag_with_ref: true
+      #- name: Push to GitHub Packages
+       # uses: docker/build-push-action@v1
+        #--uses: docker/build-push-action@v2 
+        #with:
+          #--context: .
+         # dockerfile: ./dockerfile/Dockerfile
+          #--file: ./dockerfile/Dockerfile
+          #username: ${{ secrets.REPO_USERNAME }}
+          #password: ${{ secrets.REPO_TOKEN }}
+          #registry: docker.pkg.github.com
+          #repository: mt-platform-org/demo-project-cicd/demo-project-cicd_v2.0
+          #--tags: mt-platform-org/demo-project-cicd/demo-project-cicd_v2.0
+          #tag_with_ref: true
       
       - name: Running the docker image
         run: |
