@@ -47,4 +47,10 @@ jobs:
           repository: mt-platform-org/demo-project-cicd/demo-project-cicd_v2.0
           #tags: mt-platform-org/demo-project-cicd/demo-project-cicd_v2.0
           tag_with_ref: true
-          
+      
+      - name: Running the docker image
+        run: |
+          docker run --detach mt-platform-org/demo-project-cicd/demo-project-cicd_v2.0
+          docker ps
+          docker exec -it $(docker ps --format "{{.ID}}") bash
+          curl http://localhost:8080
