@@ -55,4 +55,4 @@ jobs:
           docker run --detach docker.pkg.github.com/mt-platform-org/demo-project-cicd/demo-project-cicd_v2.0:latest
           docker ps
           docker exec -i $(docker ps --format "{{.ID}}") bash
-          curl http://localhost:8080
+          curl http://localhost:8284
