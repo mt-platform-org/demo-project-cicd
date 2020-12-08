@@ -46,5 +46,5 @@ jobs:
           registry: docker.pkg.github.com
           repository: mt-platform-org/demo-project-cicd/demo-project-cicd_v2.0
           #tags: mt-platform-org/demo-project-cicd/demo-project-cicd_v2.0
-          #tag_with_ref: true
+          tag_with_ref: true
           
