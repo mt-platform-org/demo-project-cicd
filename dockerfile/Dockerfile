@@ -11,7 +11,7 @@ ENV SAG_HOME=${SAG_HOME:-/opt/softwareag}
 
 #RUN yum -y update && yum install  -y java-1.8.0-openjdk 
 
-RUN export BOOT_JAR_FILE_NAME=$(ls ./build/libs/*.jar)
+#RUN export BOOT_JAR_FILE_NAME=$(ls ./build/libs/*.jar)
 
 #RUN  set -x \
 #      && groupadd -r ug215385 \
@@ -20,13 +20,12 @@ RUN export BOOT_JAR_FILE_NAME=$(ls ./build/libs/*.jar)
 EXPOSE 80
 
 #USER ug215385
-RUN pwd
-RUN echo $BOOT_JAR_FILE_NAME
+
 WORKDIR $SAG_HOME
 RUN pwd
 
 #ADD --chown=ug215385:ug215385  ./build/libs/$BOOT_JAR_FILE_NAME $SAG_HOME/$BOOT_JAR_FILE_NAME
-ADD /build/libs/springboot-ci-demo*.jar $SAG_HOME/spring-boot-demo.jar
+COPY /build/libs/springboot-ci-demo*.jar $SAG_HOME/spring-boot-demo.jar
 #COPY --chown=ug215385:ug215385 /uitemplates $SAG_HOME/uitemplates
 COPY /uitemplates $SAG_HOME/uitemplates
 
