@@ -54,5 +54,5 @@ jobs:
           docker pull  docker.pkg.github.com/mt-platform-org/demo-project-cicd/demo-project-cicd_v2.0:latest
           docker run --detach docker.pkg.github.com/mt-platform-org/demo-project-cicd/demo-project-cicd_v2.0:latest
           docker ps
-          docker exec -it $(docker ps --format "{{.ID}}") bash
+          winpty docker exec -it $(docker ps --format "{{.ID}}") bash
           curl http://localhost:8080
