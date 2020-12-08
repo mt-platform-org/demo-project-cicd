@@ -52,7 +52,7 @@ jobs:
         run: |
           echo ${{ secrets.REPO_TOKEN }} | docker login https://docker.pkg.github.com -u ${{ secrets.REPO_USERNAME }} --password-stdin
           docker pull  docker.pkg.github.com/mt-platform-org/demo-project-cicd/demo-project-cicd_v2.0:latest
-          docker run --detach -p 80:8284 docker.pkg.github.com/mt-platform-org/demo-project-cicd/demo-project-cicd_v2.0:latest
+          docker run --detach -p 8284:80 docker.pkg.github.com/mt-platform-org/demo-project-cicd/demo-project-cicd_v2.0:latest
           docker ps
           docker exec -i $(docker ps --format "{{.ID}}") bash
           curl http://localhost:8284
