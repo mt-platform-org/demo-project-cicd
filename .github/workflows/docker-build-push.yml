@@ -41,7 +41,7 @@ jobs:
       - name: Login to Github package registry
         uses: docker/login-action@v1
         with:
-          registry: ghcr.io
+          registry: docker.pkg.github.com
           username: ${{ secrets.REPO_USERNAME }}
           password: ${{ secrets.REPO_TOKEN }}
         
@@ -55,7 +55,7 @@ jobs:
 #          repo-token: ${{ secrets.REPO_TOKEN }}
 #          registry: docker.pkg.github.com
 #          repository: mt-platform-org/demo-project-cicd/demo-project-cicd_v1.0 
-          tags: mt-platform-org/demo-project-cicd/demo-project-cicd_v1.0 
+          tags: ghcr.io/mt-platform-org/demo-project-cicd/demo-project-cicd_v1.0 
           
       #- name: Push to GitHub Packages
        # uses: docker/build-push-action@v1
