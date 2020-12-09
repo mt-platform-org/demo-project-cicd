@@ -55,7 +55,7 @@ jobs:
 #          repo-token: ${{ secrets.REPO_TOKEN }}
 #          registry: docker.pkg.github.com
 #          repository: mt-platform-org/demo-project-cicd/demo-project-cicd_v1.0 
-          tags: ghcr.io/mt-platform-org/demo-project-cicd/demo-project-cicd_v1.0 
+          tags: ghcr.io/mt-platform-org/demo-project-cicd_v11.0 
           
       #- name: Push to GitHub Packages
        # uses: docker/build-push-action@v1
