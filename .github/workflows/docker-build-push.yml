@@ -47,6 +47,8 @@ jobs:
           file: ./dockerfile/Dockerfile
 #          username: ${{ secrets.REPO_USERNAME }}
 #          password: ${{ secrets.REPO_TOKEN }}
+          secrets: |
+            GIT_AUTH_TOKEN=${{ secrets.REPO_TOKEN }}
           push: true
 #          registry: docker.pkg.github.com
 #          repository: mt-platform-org/demo-project-cicd/demo-project-cicd_v1.0 
